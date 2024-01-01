@@ -3,5 +3,5 @@ import { TActionCallback } from "../action.types";
 
 export interface IActionTask<T> {
   state: IStateModel<T>;
-  callback: TActionCallback<T>;
+  callback: TActionCallback<T, T>;
 }

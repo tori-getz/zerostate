@@ -11,7 +11,7 @@ export class ActionModel<T> extends BaseModel implements IActionModel<T> {
   }
 
   public call(value: T): void {
-    this.notifyWatchers(value);
+    this.notifyWatchers<T>(value);
     this.runTasks(value);
   }
 

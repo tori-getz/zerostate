@@ -2133,7 +2133,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:^1.5.1":
+"axios@npm:^1.5.1, axios@npm:^1.6.3":
   version: 1.6.3
   resolution: "axios@npm:1.6.3"
   dependencies:
@@ -8630,6 +8630,7 @@ __metadata:
     "@typescript-eslint/parser": ^6.14.0
     "@vitejs/plugin-react": ^4.2.1
     "@zerostate/core": "*"
+    axios: ^1.6.3
     eslint: ^8.55.0
     eslint-plugin-react-hooks: ^4.6.0
     eslint-plugin-react-refresh: ^0.4.5

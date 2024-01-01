@@ -1,7 +1,8 @@
 import { BaseModel } from "~/base/base.model";
 import type { IStateModel } from "./interfaces/state-model.interface";
 import type { IStateOptions } from "./interfaces/state-options.interface";
-import type { TActionCallback, TActionFunction } from "~/action/action.types";
+import type { TActionCallback } from "~/action/action.types";
+import { ActionModel } from "~/action/action.model";
 
 export class StateModel<T = unknown> extends BaseModel implements IStateModel<T> {
   private value: T | null;
@@ -13,6 +14,8 @@ export class StateModel<T = unknown> extends BaseModel implements IStateModel<T>
     super({ name });
     
     this.value = initialValue ?? null;
+
+    this.notifyWatchers(this.value);
   }
 
   public getState(): T | null {
@@ -25,10 +28,17 @@ export class StateModel<T = unknown> extends BaseModel implements IStateModel<T>
   }
 
   public on(
-    action: TActionFunction<T>,
-    callback: TActionCallback<T>,
+    unit: BaseModel,
+    callback: TActionCallback<T, T>,
   ) {
-    action.model.addTask({ state: this, callback });
+    if (unit instanceof ActionModel) {
+      unit.addTask({ state: this, callback });
+    }
+
+    if ('model' in unit && unit.model instanceof ActionModel) {
+      unit.model.addTask({ state: this, callback })
+    }
+
     return this;
   }
 }
