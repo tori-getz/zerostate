@@ -1,26 +1,11 @@
-import { $count } from './states';
+import { getGoogleThunk } from './thunks';
 
-import { increment, decrement } from './actions';
-import { app } from './domain';
-
-app.watch((unit) => console.log('domain updated, new unit', unit));
-
-$count
-  .on(increment, (prev, payload) => prev + payload)
-  .on(decrement, (prev, payload) => prev - payload);
-
-console.log(increment.model);
-console.log(decrement.model);
-
-$count.watch(() => console.log($count))
-
-increment.model.watch((num) => {
-  console.log(`increment: ${num}`, increment.model);
+getGoogleThunk.loading.watch(loading => {
+  console.log('google thunk: loading', loading);
 });
 
-console.log($count);
+getGoogleThunk.loaded.model.watch(loaded => console.log('google thunk: loaded', loaded));
 
-increment(10);
-decrement(4);
+getGoogleThunk.done.watch(done => console.log('google thunk: done', done));
 
-console.log(app);
+getGoogleThunk(15);
