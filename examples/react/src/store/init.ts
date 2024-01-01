@@ -1,6 +1,9 @@
 import { $count } from './states';
 
 import { increment, decrement } from './actions';
+import { app } from './domain';
+
+app.watch((unit) => console.log('domain updated, new unit', unit));
 
 $count
   .on(increment, (prev, payload) => prev + payload)
@@ -20,3 +23,4 @@ console.log($count);
 increment(10);
 decrement(4);
 
+console.log(app);

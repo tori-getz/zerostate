@@ -1,6 +1,6 @@
-import { action } from '@zerostate/core';
+import { app } from './domain';
 
-export const increment = action<number>('increment');
+export const increment = app.createAction<number>('increment');
 
-export const decrement = action<number>('decrement');
+export const decrement = app.createAction<number>('decrement');
 

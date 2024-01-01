@@ -1,3 +1,3 @@
-import { state } from '@zerostate/core';
+import { app } from './domain';
 
-export const $count = state<number>(0, { name: 'count' });
+export const $count = app.createState<number>(0, { name: 'count' });

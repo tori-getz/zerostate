@@ -1,10 +1,7 @@
-import { IStateOptions } from "./interfaces/state-options.interface";
 import { StateModel } from "./state.model";
+import type { TStateUnit } from "./state.types";
 
-export const state = <T = unknown>(
-  value: T,
-  options: Partial<Omit<IStateOptions<T>, 'initialValue'>> = {},
-): StateModel<T> => {
+export const state: TStateUnit = (value, options) => {
   return new StateModel({
     initialValue: value,
     ...options
