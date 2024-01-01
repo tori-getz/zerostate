@@ -1,0 +1,22 @@
+{
+  "name": "@zerostate/core",
+  "type": "module",
+  "scripts": {
+    "build": "unbuild"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "packageManager": "yarn@3.6.3",
+  "devDependencies": {
+    "unbuild": "^2.0.0"
+  }
+}
