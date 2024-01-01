@@ -1,10 +1,12 @@
-import { useState } from 'react'
+import { useState } from '@zerostate/react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { $count } from './store/states'
+import { increment } from './store/actions'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const count = useState($count);
 
   return (
     <>
@@ -18,7 +20,7 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
+        <button onClick={() => increment(1)}>
           count is {count}
         </button>
         <p>

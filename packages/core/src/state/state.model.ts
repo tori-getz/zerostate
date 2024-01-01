@@ -19,7 +19,7 @@ export class StateModel<T = unknown> extends BaseModel implements IStateModel<T>
   }
 
   public getState(): T | null {
-    return this.value;
+    return this.value ?? null;
   }
   
   public setState(value: T): void {

@@ -13,9 +13,8 @@ export class BaseModel implements IBaseModel {
     this.name = name;
   }
 
-  public watch(fn: TBaseWatcher): Function {
+  public watch(fn: TBaseWatcher): () => void {
     this.watchers.add(fn);
-
     return () => {
       this.unwatch(fn);
     }

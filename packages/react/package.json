@@ -1,0 +1,35 @@
+{
+  "name": "@zerostate/react",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "nodemon",
+    "build": "unbuild"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "packageManager": "yarn@3.6.3",
+  "dependencies": {
+    "@zerostate/core": "*"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.43",
+    "nodemon": "^3.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "unbuild": "^2.0.0"
+  }
+}

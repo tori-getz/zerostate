@@ -1,11 +1,6 @@
-import { getGoogleThunk } from './thunks';
+import { decrement, increment } from './actions';
+import { $count } from './states';
 
-getGoogleThunk.loading.watch(loading => {
-  console.log('google thunk: loading', loading);
-});
-
-getGoogleThunk.loaded.model.watch(loaded => console.log('google thunk: loaded', loaded));
-
-getGoogleThunk.done.watch(done => console.log('google thunk: done', done));
-
-getGoogleThunk(15);
+$count
+  .on(increment, (prev, count) => prev + count)
+  .on(decrement, (prev, count) => prev - count);

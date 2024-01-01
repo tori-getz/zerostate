@@ -1838,6 +1838,22 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@zerostate/react@*, @zerostate/react@workspace:packages/react":
+  version: 0.0.0-use.local
+  resolution: "@zerostate/react@workspace:packages/react"
+  dependencies:
+    "@types/react": ^18.2.43
+    "@zerostate/core": "*"
+    nodemon: ^3.0.2
+    react: ^18.2.0
+    react-dom: ^18.2.0
+    unbuild: ^2.0.0
+  peerDependencies:
+    react: ^18.2.0
+    react-dom: ^18.2.0
+  languageName: unknown
+  linkType: soft
+
 "@zkochan/js-yaml@npm:0.0.6":
   version: 0.0.6
   resolution: "@zkochan/js-yaml@npm:0.0.6"
@@ -8630,6 +8646,7 @@ __metadata:
     "@typescript-eslint/parser": ^6.14.0
     "@vitejs/plugin-react": ^4.2.1
     "@zerostate/core": "*"
+    "@zerostate/react": "*"
     axios: ^1.6.3
     eslint: ^8.55.0
     eslint-plugin-react-hooks: ^4.6.0
