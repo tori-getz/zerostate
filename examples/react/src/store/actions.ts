@@ -1,6 +1,6 @@
 import { action } from '@zerostate/core';
 
-export const increment = action('increment');
+export const increment = action<number>('increment');
 
-export const decrement = action('decrement');
+export const decrement = action<number>('decrement');
 
